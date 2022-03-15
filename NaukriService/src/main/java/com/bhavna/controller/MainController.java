@@ -39,7 +39,7 @@ public class MainController {
 		return response;
 	}
 	
-	@GetMapping("getProfile/{username}")
+	@GetMapping("getProfile/{username}"+"${domainName}")
 	public ResponseEntity<Employee> getStudentList(@PathVariable String username) {
 		return restTemplate.getForEntity("http://localhost:8082/api-employee/get/profile/"+username+domainName,Employee.class);
 	}
